@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+	<div class="jumbotron jumbotron-fluid">
+  <div class="container">
+	  <h2>Public corporations are required by law to report key financial details at the end of each financial quarter.</h2><br>
+    <p>Some examples of these metrics are:
+    	<ul>
+		<li>EPS (Earnings Per Share)</li>
+		<li>Total Revenue</li>
+		<li>Gross Profit</li>
+		<li>Total Operating Expense</li>
+		<li>And More!</li>
+	</ul>
+	</p>
+
+    <p>Depending on the sentiment of the report, investors frequently reward a well-performing stock through purchase of shares. On the other hand, when a stock does not meet expectations, investors usually sell the stock.</p>
+
+    <p>Taking into account the enormous amount of investors active at any given time, these reports can cause large surges or drops in stock price, with an extreme example of Tesla Inc. (TSLA) given below.</p>
+
+    <img src="/static/tesla_plot.png" alt="tesla plot" style="width:1000px;height:560px;"><br><br>
+
+
+    <h3>So how do we capitalize on this trend?</h3>
+
+    <p>Millions of people use Facebook. Often, these people also 'Check-In' when they are out eating or shopping. Using Facebook data provided by Thinknum, the check-ins for thousands of companies over time are free to analyze.</p>
+
+    <p>Since money is implicitly spent when people are out eating or shopping, I designed a machine-learning algorithim, that when given Facebook check-ins and other data leading up to a quarter's end, attempts to predict if a company will beat its estimates.</p>
+
+    <p>So we could find out BEFORE a report is released if a stock will perform well or poorly, and then buy or sell that stock BEFORE the anticipated jump in share price. Thus, we could improve financial gains and inhibit losses.</p>
+
+    <p>Some disclaimers:
+    <ul>
+	    <li>This approach using check-ins only applies to brick-and-mortar stores, and can not be used for companies like Google or the New York Times.
+	    </li>
+	    <li>Many publicly traded companies are conglomorates. For instance, if a publicly traded company owned two eateries, then check-ins for one eatery would not necessarily reflect the overall performance of the company.
+		  </li>
+		  <li>Along that thought, check-ins are not the holy grail of predictions. Recessions, booms, acquisitions, mergers, innovations, and scandals can all affect the sentiment of investors, and therefore the trends in share prices themselves.</li>
+		  <li>Furthermore, check-ins may be misleading. For instance, Planet Fitness may have many new memberships, but people lose their new years convictions and stop checking in at the gym. On the flip side, people may do sit-ins at Starbucks in protest while checking in but not buying anything.</li>
+		  <li>The Facebook dataset contained private and public companies, both with and without brick-and-mortar storefronts. NLP was used in attempt to sort out the desirable entries, but data contamination is possible.</li>
+	</ul>
+    </p>
+ 
+   
+  </div>
+</div>
+<div>
+
+{% endblock content %}
+

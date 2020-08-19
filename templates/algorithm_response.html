@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<br><br>
+
+<table class="table table-hover table-sm table-dark">
+  <thead>
+    <tr>
+      <th scope="col">Company</th>
+      <th scope="col">Report Date</th>
+      <th scope="col">Predicted Surprise EPS (%)</th>
+      <th scope="col">Recommendation</th>
+    </tr>
+  </thead>
+  <tbody>
+
+{% for row in form_results['table_data'] %}
+	{% if row[3] == 'Strong Buy' %}
+		{% set color = 'table-success' %}
+	{% elif row[3] == 'Weak Buy' %}
+		{% set color = 'table-info' %}
+	{% elif row[3] == 'Weak Sell' %}
+		{% set color = 'table-warning' %}
+	{% elif row[3] == 'Strong Sell' %}
+		{% set color = 'table-danger' %}
+	{% endif %}
+    <tr class={{ color }}>
+	<td>{{ row[0] }}</td>
+	<td>{{ row[1] }}</td>
+	<td>{{ row[2] }}</td>
+	<td>{{ row[3] }}</td>
+    </tr>
+{% endfor %}
+
+  </tbody>
+</table>
+
+<br><br>
+
+<h4>Predicted Investment Return: {{ form_results['plot_data'][1] }}</h4>
+<h4>Naive Investment Return: {{ form_results['plot_data'][3] }}</h4>
+
+<br>
+
+{% include 'plot.html' %}
+
+
+{% endblock content %}

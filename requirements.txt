@@ -1,0 +1,8 @@
+gunicorn==19.9.0
+flask
+pandas
+numpy
+pickle
+pip
+bokeh
+jinja2

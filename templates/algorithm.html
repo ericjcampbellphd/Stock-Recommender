@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+	<div class="jumbotron jumbotron-fluid">
+  <div class="container">
+    	<form action="/algorithm" method="post">
+
+		<label for="year">Select a year:</label><br>
+		<input type="radio" id="2017" name="year" value=2017 checked>
+		<label for="2017">2017</label><br>
+		<input type="radio" id="2018" name="year" value=2018>
+		<label for="2018">2018</label><br><br>
+
+		<label for="quarter">Select a financial quarter:</label><br>
+		<input type="radio" id="Q1" name="quarter" value=1 checked>
+		<label for="Q1">Jan 1 - Mar 30</label><br>
+		<input type="radio" id="Q2" name="quarter" value=2>
+		<label for="Q2">Apr 1 - Jun 30</label><br>
+		<input type="radio" id="Q3" name="quarter" value=3>
+		<label for="Q3">Jul 1 - Sep 30</label><br>
+		<input type="radio" id="Q4" name="quarter" value=4>
+		<label for="Q4">Oct 1 - Dec 31</label><br><br>
+
+		<input type="submit" value="Predict">
+	</form>
+
+  </div>
+</div>
+{% endblock content %}
